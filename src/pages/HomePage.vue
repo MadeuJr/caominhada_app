@@ -9,11 +9,11 @@
       <div class="column container flex flex-center q-pa-md ">
 
 
-              <!-- <q-icon name="fa-solid fa-route" color="primary" size="30px" />
+        <!-- <q-icon name="fa-solid fa-route" color="primary" size="30px" />
               <q-icon name="access_time_filled" color="primary" size="30px" /> -->
 
 
-        <div class="row flex items-center justify-around  q-pa-md q-ma-md shadow-4 full-width ">
+        <div class="row flex items-center justify-around  q-pa-md q-ma-md shadow-4 full-width infoborder">
           <div class="column datatrip">
             <div class="row">Velocidade Média</div>
             <div class="row text-primary">valor</div>
@@ -25,7 +25,7 @@
           </div>
         </div>
 
-        <div class="row flex items-center justify-around  q-pa-md q-ma-md shadow-4 full-width ">
+        <div class="row flex items-center justify-around  q-pa-md q-ma-md shadow-4 full-width infoborder">
           <div class="column datatrip">
             <div class="row">Velocidade Média</div>
             <div class="row text-primary">valor</div>
@@ -37,7 +37,7 @@
           </div>
         </div>
 
-        <div class="row flex items-center justify-around  q-pa-md q-ma-md shadow-4 full-width ">
+        <div class="row flex items-center justify-around  q-pa-md q-ma-md shadow-4 full-width infoborder">
           <div class="column datatrip">
             <div class="row">Velocidade Média</div>
             <div class="row text-primary">valor</div>
@@ -69,6 +69,10 @@
 
 .icontrip{
   width: 30%;
+}
+
+.infoborder{
+  border-radius: 20px;
 }
 
 </style>
