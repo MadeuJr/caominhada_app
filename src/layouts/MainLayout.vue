@@ -15,7 +15,7 @@
           <q-route-tab name="Home" exact icon="home" to="/home" />
 
           <q-route-tab name="Trip" exact icon="route" to="/trip" />
-          <q-route-tab name="Pets" exact icon="pets" to="/dogs" />
+          <q-route-tab name="Pets" exact icon="fa-solid fa-dog" to="/dogs" />
           <q-route-tab name="Settigs" exact icon="settings" to="/settings" />
         </q-tabs>
 

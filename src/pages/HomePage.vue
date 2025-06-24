@@ -17,9 +17,9 @@
 
 
     <div class="column q-px-lg q-my-lg">
- 
 
-      <div class="column container flex-center q-pa-md">
+
+      <div class="column container flex-center q-pa-md  shadow-5 ">
 
         <div class="row flex items-center justify-around  q-pa-md q-ma-md shadow-4 full-width infoborder">
           <div class="column datatrip">
