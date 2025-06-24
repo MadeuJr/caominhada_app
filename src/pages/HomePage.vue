@@ -1,17 +1,25 @@
 <template>
-  <q-page class="flex flex-center">
-    <div class="column full-width q-px-md">
+  <q-page class="column justify-start">
 
-      <div class="row flex flex-center">
-        <q-img :src="Logo" loading="eager" width="200px" />
+    <div class="row justify-center">
+      <q-img :src="Logo" loading="eager" width="150px" class="q-ma-sm" />
+    </div>
+
+    <div class="row q-ma-lg">
+      <div>
+        <q-img :src="UserIcon" width="40px" />
       </div>
+      <div class="q-ma-sm">
+        name
+      </div>
+    </div>
 
-      <div class="column container flex flex-center q-pa-md ">
 
 
-        <!-- <q-icon name="fa-solid fa-route" color="primary" size="30px" />
-              <q-icon name="access_time_filled" color="primary" size="30px" /> -->
+    <div class="column q-px-lg q-my-lg">
+ 
 
+      <div class="column container flex-center q-pa-md">
 
         <div class="row flex items-center justify-around  q-pa-md q-ma-md shadow-4 full-width infoborder">
           <div class="column datatrip">
@@ -56,28 +64,27 @@
 </template>
 
 <style>
-
-.container{
+.container {
   border: 2px solid black;
   border-radius: 20px;
 }
 
 
-.datatrip{
+.datatrip {
   width: 60%;
 }
 
-.icontrip{
+.icontrip {
   width: 30%;
 }
 
-.infoborder{
+.infoborder {
   border-radius: 20px;
 }
-
 </style>
 
 <script setup lang="ts">
 import Logo from 'src/assets/Logo.png'
+import UserIcon from 'src/assets/Userphoto.png'
 
 </script>
