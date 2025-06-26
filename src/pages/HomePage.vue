@@ -19,7 +19,7 @@
     <div class="column q-px-lg q-my-lg">
 
 
-      <div class="column container flex-center q-pa-md  shadow-5 ">
+      <div class="column container flex-center q-pa-md  shadow-2 ">
 
         <div class="row flex items-center justify-around  q-pa-md q-ma-md shadow-4 full-width infoborder">
           <div class="column datatrip">
@@ -64,10 +64,7 @@
 </template>
 
 <style>
-.container {
-  border: 2px solid black;
-  border-radius: 20px;
-}
+
 
 
 .datatrip {

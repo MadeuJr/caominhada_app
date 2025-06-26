@@ -29,9 +29,9 @@
 
 .q-footer {
   background-color: #f3f3f3;
-  border-top: 2px solid black;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+  border-top: 1.5px solid black;
+  border-left: 1.5px solid black;
+  border-right: 1.5px solid black;
   border-radius: 20px 20px 0 0;
   color: black;
 }

@@ -7,9 +7,7 @@
 </template>
 
 <style>
-.fullcontent {
-  height: 92vh;
-}
+
 </style>
 
 <script setup lang="ts">

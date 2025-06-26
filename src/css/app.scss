@@ -2,4 +2,20 @@
 
 body{
     background-color: #F3F3F3;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.container {
+    border: 1.5px solid black;
+    border-radius: 20px; 
+}
+
+.fullcontent {
+    height: 91vh;
+}
+
+.cardborder {
+    border: 1.5px solid black;
+    border-radius: 10px;
 }
