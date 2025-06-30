@@ -109,7 +109,9 @@ export default defineConfig((ctx) => {
       config: {},
       plugins: [
         'LocalStorage',
-        'SessionStorage'
+        'SessionStorage',
+        'Notify',
+        'Dialog'
       ],
 
       // iconSet: 'material-icons', // Quasar icon set

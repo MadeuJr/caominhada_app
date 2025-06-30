@@ -1,5 +1,5 @@
 <template>
-    <q-expansion-item>
+    <q-expansion-item class="q-py-sm q-mx-sm q-my-lg shadow-5 cardborder">
         <template v-slot:header>
             <q-item-section avatar>
                 <q-avatar>
@@ -8,23 +8,21 @@
             </q-item-section>
 
             <q-item-section>
-                Nome: technology
+                Nome: <span class=" text-caption">{{ name }}</span>
             </q-item-section>
             <q-item-section>
-                Raça: technology
+                Endereço: <span class=" text-caption">{{ address }}</span>
             </q-item-section>
-            <q-item-section>
-                Porte: technology
-            </q-item-section>
+
 
         </template>
         <q-card>
             <q-card-section>
-
+                <q-btn />
             </q-card-section>
         </q-card>
     </q-expansion-item>
-    <q-separator />
+
 </template>
 
 <style></style>
@@ -34,14 +32,16 @@
 import Userphoto from 'src/assets/Userphoto.png'
 
 const props = defineProps({
-    userImage: String
+    tutorImage: String,
+    id: Number,
+    name: String,
+    address: String
 })
 
 import { computed } from 'vue'
 
 const imageToShow = computed(() => {
-    return props.userImage ? props.userImage : Userphoto
+    return props.tutorImage ? props.tutorImage : Userphoto
 })
-
 
 </script>

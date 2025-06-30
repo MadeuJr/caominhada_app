@@ -5,8 +5,7 @@ const routes: RouteRecordRaw[] = [
     path: '/',
     component: () => import('layouts/NormalLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: '/login', component: () => import('pages/LoginPage.vue') },
+      { path: '', component: () => import('pages/LoginPage.vue') },
     ],
   },
   {
@@ -15,7 +14,16 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: '/home', component: () => import('pages/HomePage.vue') },
       { path: '/trip', component: () => import('pages/TripPage.vue') },
-      { path: '/dogs', component: () => import('pages/DogPage.vue') },
+      {
+        path: '/dogs',
+        component: () => import('pages/DogPage.vue'),
+        children: [
+          { path: 'tutoradd', component: () => import('pages/DogsAdicionarTutor_walker.vue') },
+          { path: '/dog', component: () => import('pages/DogsInfoDog.vue') },
+          { path: 'dogadd', component: () => import('pages/DogsAdicionar_tutor.vue') },
+          { path: '/tutorinfo', component: () => import('pages/DogsInfoTutor_walker.vue') },
+        ],
+      },
       { path: '/settings', component: () => import('pages/SettingsPage.vue') },
     ],
   },

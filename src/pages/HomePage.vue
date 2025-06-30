@@ -10,14 +10,11 @@
         <q-img :src="UserIcon" width="40px" />
       </div>
       <div class="q-ma-sm">
-        name
+        Olá {{ Name }}!
       </div>
     </div>
 
-
-
     <div class="column q-px-lg q-my-lg">
-
 
       <div class="column container flex-center q-pa-md  shadow-2 ">
 
@@ -83,5 +80,12 @@
 <script setup lang="ts">
 import Logo from 'src/assets/Logo.png'
 import UserIcon from 'src/assets/Userphoto.png'
+import { useQuasar } from 'quasar';
+
+const $q = useQuasar();
+
+const Name = $q.localStorage.getItem('name')
+
+
 
 </script>
