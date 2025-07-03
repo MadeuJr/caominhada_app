@@ -23,7 +23,7 @@ const props = defineProps<{
 
 const mapRef = ref(null)
 let map: Map
-let vectorSource = new VectorSource()
+const vectorSource = new VectorSource()
 let lineFeature: Feature<LineString>
 let markerFeature: Feature<Point>
 

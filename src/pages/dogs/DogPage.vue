@@ -1,9 +1,9 @@
 <template>
   <q-page>
     <q-page-container class="column fullcontent justify-start container q-mx-md q-mt-sm shadow-5">
-      <q-scroll-area class="q-mt-sm" style="height: 100%;">
-        <template v-if="!exibindoSubpagina">
-          <!-- Se for TUTOR, mostra os DogCards -->
+      <template v-if="!exibindoSubpagina" >
+          <q-scroll-area  class="q-mt-sm" style="height: 100%;">
+
           <div v-if="role === 'TUTOR'">
             <h5 class="text-center q-mb-lg">Seus Cachorros</h5>
 
@@ -13,11 +13,11 @@
 
 
             <div class="q-mt-xl absolute-bottom flex justify-center">
-              <q-btn rounded label="Adicionar Cachorro" color="primary" icon="add" @click="irParaAdicionarCachorro" />
+              <q-btn rounded label="Adicionar Cachorro" color="apptheme" icon="add" @click="irParaAdicionarCachorro" />
             </div>
           </div>
 
-          <!-- Se for WALKER, mostra os TutorCards e o botão -->
+
           <div v-else-if="role === 'WALKER'">
             <h5 class="text-center q-mb-md">Tutores Atendidos</h5>
 
@@ -31,15 +31,15 @@
             </div>
           </div>
 
-          <!-- Se a role for inválida -->
+
           <div v-else>
             <q-banner class="bg-warning text-black">
               Role do usuário não reconhecida.
             </q-banner>
           </div>
+        </q-scroll-area>
         </template>
-      </q-scroll-area>
-      <router-view />
+      <router-view/>
     </q-page-container>
   </q-page>
 </template>

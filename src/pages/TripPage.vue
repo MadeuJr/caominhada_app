@@ -1,29 +1,29 @@
 <!-- eslint-disable @typescript-eslint/restrict-template-expressions -->
 <template>
-  <q-page>
-    <q-page-container class="column fullcontent justify-start container q-mx-md q-mt-sm shadow-5">
-      <div v-if="role === 'WALKER'">
-        <q-select v-model="tutorSelecionado" :options="tutores" option-label="user.name" label="Selecione o tutor"
-          @update:model-value="buscarDogs" />
+    <q-page>
+      <q-page-container class="column fullcontent justify-start container q-mx-md q-mt-sm shadow-5">
+        <div v-if="role === 'WALKER'">
+          <q-select v-model="tutorSelecionado" :options="tutores" option-label="user.name" label="Selecione o tutor"
+            @update:model-value="buscarDogs" />
 
-        <q-select v-if="dogs.length" v-model="dogSelecionado" :options="dogs" option-label="name"
-          label="Selecione o cachorro" />
+          <q-select v-if="dogs.length" v-model="dogSelecionado" :options="dogs" option-label="name"
+            label="Selecione o cachorro" />
 
-        <div class="q-my-md" style="height: 300px">
-          <TripMap :positions="posicoes" />
+          <div class="q-my-md" style="height: 300px">
+            <TripMap :positions="posicoes" />
+          </div>
+
+          <q-btn color="primary" :label="passeioAtivo ? 'Parar Passeio' : 'Iniciar Passeio'" @click="alternarPasseio"
+            class="full-width" />
         </div>
 
-        <q-btn color="primary" :label="passeioAtivo ? 'Parar Passeio' : 'Iniciar Passeio'" @click="alternarPasseio"
-          class="full-width" />
-      </div>
-
-      <div v-else-if="role === 'TUTOR'">
-        <div class="q-my-md" style="height: 300px">
-          <TripMap :positions="posicoes" />
+        <div v-else-if="role === 'TUTOR'">
+          <div class="q-my-md" style="height: 300px">
+            <TripMap :positions="posicoes" />
+          </div>
         </div>
-      </div>
-    </q-page-container>
-  </q-page>
+      </q-page-container>
+    </q-page>
 </template>
 
 <script setup lang="ts">
@@ -33,8 +33,6 @@ import { useQuasar } from 'quasar'
 import { Geolocation } from '@capacitor/geolocation'
 import io from 'socket.io-client'
 import TripMap from 'components/TripMap.vue'
-
-await Geolocation.requestPermissions()
 
 const $q = useQuasar()
 const role = $q.localStorage.getItem('role')
@@ -47,13 +45,18 @@ interface Tutor {
   address: string
 }
 
+interface Position{
+  lat: number,
+  lng: number
+}
+
 const tutores = ref<Tutor[]>([])
 const dogs = ref([])
 const tutorSelecionado = ref(null)
 const dogSelecionado = ref(null)
 
 const passeioAtivo = ref(false)
-const posicoes = ref<unknown[]>([])
+const posicoes = ref<Position[]>([])
 
 let watchId: string | null = null
 
@@ -63,7 +66,6 @@ onMounted(async () => {
     const res = await api.get(`/walker/${walkerId}/tutors`)
     tutores.value = res.data
   }
-
   if (role === 'TUTOR' && userId) {
     const socket = io('http://localhost:3000')
     socket.on(`location-2`, (data) => {
@@ -90,7 +92,7 @@ const alternarPasseio = async () => {
         console.error('Erro no rastreamento:', err)
         return
       }
-
+ 
       if (position) {
         const { latitude, longitude } = position.coords
         console.log('Nova posição:', latitude, longitude)
