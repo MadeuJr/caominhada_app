@@ -183,7 +183,10 @@ const handleRegister = async () => {
 
     $q.notify({
       type: 'positive',
-      message: "Registro realizado com sucesso"
+      message: "Registro realizado com sucesso",
+      actions: [
+        { icon: 'close', color: 'white', round: true, handler: () => { /* ... */ } }
+      ]
     })
 
     await router.push('/home')
@@ -192,7 +195,10 @@ const handleRegister = async () => {
     console.error('Erro ao fazer registro:', error)
     $q.notify({
       type: 'negative',
-      message: 'Erro ao fazer login.'
+      message: 'Erro ao fazer login.',
+      actions: [
+        { icon: 'close', color: 'white', round: true, handler: () => { /* ... */ } }
+      ]
     })
   }
 }

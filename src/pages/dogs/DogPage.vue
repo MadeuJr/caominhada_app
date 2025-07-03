@@ -13,7 +13,7 @@
 
 
             <div class="q-mt-xl absolute-bottom flex justify-center">
-              <q-btn rounded label="Adicionar Cachorro" color="apptheme" icon="add" @click="irParaAdicionarCachorro" />
+              <q-btn rounded label="Adicionar Cachorro" color="primary" icon="add" @click="irParaAdicionarCachorro" />
             </div>
           </div>
 

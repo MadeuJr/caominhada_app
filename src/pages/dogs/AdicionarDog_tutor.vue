@@ -1,7 +1,7 @@
-<template >
-  <q-page class="flex column q-ma-md">
+<template>
+  <div class="flex column q-ma-md">
     <div>
-      <q-btn class="q-py-md q-px-lg" outline rounded icon="arrow_back" color="secondary" @click="voltar" />
+      <q-btn class="q-py-md q-px-lg" outline rounded icon="arrow_back" color="blue" @click="voltar" />
     </div>
 
     <div class="text-center">
@@ -17,16 +17,22 @@
         <q-input outlined dense rounded v-model="form.observation" label="Observações" type="textarea" autogrow
           hint="Insira Condições para realizar o passeio com esse cachorro" />
 
-        <div class="flex justify-center">
-          <q-btn rounded type="reset" @click="limparFormulario" label="Limpar" color="warning" class="q-mr-sm" />
-          <q-btn rounded type="submit" label="Salvar" color="primary" />
+        <div class="row justify-center q-mt-xl">
+          <q-btn rounded type="reset" icon="cleaning_services" @click="limparFormulario" label="Limpar" color="warning"
+            class="q-mr-sm" />
+          <q-btn rounded type="submit" icon="save" label="Salvar" color="positive"/>
         </div>
 
       </q-form>
 
+
     </div>
-  </q-page>
+
+  </div>
+
 </template>
+
+<style></style>
 
 <script setup lang="ts">
 import { ref } from 'vue'
@@ -59,10 +65,10 @@ const salvarDog = async () => {
   try {
     const payload = {
       ...form.value,
-      tutorId 
+      tutorId
     }
     await api.post('/dog', payload)
-    await router.push('/dogs') 
+    await router.push('/dogs')
   } catch (err) {
     console.error('Erro ao salvar dog:', err)
   }
